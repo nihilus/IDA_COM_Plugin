@@ -87,6 +87,9 @@ unsigned long g_nNoFunctions = 0; // counter for names, but no functions yet
 BOOL g_bGUIVersion = FALSE;
 BOOL g_bSilent = FALSE;
 
+inline ssize_t idaapi ExtraGet(ea_t ea, int what, char *buf, size_t bufsize) { return netnode(ea).supstr(what, buf, bufsize); }
+
+
 /*----------------------------------------------------------------------
 Similar to IDA's warning() function, but simulates "SILENT" for GUI version
 ----------------------------------------------------------------------*/
